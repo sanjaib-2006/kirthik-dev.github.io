@@ -25,22 +25,22 @@ export function Hero() {
             Available for new opportunities
           </div>
           
-          <h1 className="text-center text-6xl md:text-8xl lg:text-9xl font-black tracking-tight mb-8 animate-fade-in-up">
-            <span className="block gradient-primary bg-clip-text text-transparent">
+          <h1 className="text-center text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 animate-fade-in-up">
+            <span className="block text-white">
               Kirthik B
             </span>
           </h1>
           
-          <div className="space-y-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <p className="text-xl md:text-2xl lg:text-3xl font-light tracking-wide text-foreground/90">
+          <div className="space-y-4 animate-fade-in-up text-center" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl md:text-2xl lg:text-3xl font-light tracking-wide text-white">
               Data Engineer & AI Engineer
             </p>
-            <p className="text-lg md:text-xl gradient-primary bg-clip-text text-transparent font-semibold">
+            <p className="text-lg md:text-xl text-primary font-semibold">
               Engineering Data, Crafting Intelligence
             </p>
           </div>
           
-          <div className="mt-8 h-16 md:h-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <div className="mt-8 h-16 md:h-12 animate-fade-in-up text-center" style={{ animationDelay: '0.4s' }}>
             <TypeAnimation
               sequence={[
                 "Crafting scalable ETL pipelines with Python & PySpark.",
@@ -53,7 +53,7 @@ export function Hero() {
               wrapper="div"
               speed={50}
               repeat={Infinity}
-              className="text-base md:text-lg text-foreground/70 leading-relaxed"
+              className="text-base md:text-lg text-white/80 leading-relaxed"
             />
           </div>
           
