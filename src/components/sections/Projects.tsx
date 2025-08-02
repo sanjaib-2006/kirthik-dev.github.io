@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Github } from "lucide-react";
@@ -81,7 +80,7 @@ export function Projects() {
     <section id="projects" className="py-32 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-primary bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Featured Projects
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
