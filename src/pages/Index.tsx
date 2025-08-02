@@ -8,20 +8,32 @@ import { Projects } from "@/components/sections/Projects";
 import { Education } from "@/components/sections/Education";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/shared/Footer";
+import { CustomCursor } from "@/components/shared/CustomCursor";
+import { GeometricBackground } from "@/components/shared/GeometricBackground";
 
 const Index = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="relative min-h-screen bg-background overflow-x-hidden">
+      <CustomCursor />
+      <GeometricBackground />
       <Header />
-      <main>
+      
+      <main className="relative z-10">
         <Hero />
-        <About />
+        <div className="diagonal-transition">
+          <About />
+        </div>
         <Skills />
-        <Experience />
+        <div className="diagonal-transition">
+          <Experience />
+        </div>
         <Projects />
-        <Education />
+        <div className="diagonal-transition">
+          <Education />
+        </div>
         <Contact />
       </main>
+      
       <Footer />
     </div>
   );

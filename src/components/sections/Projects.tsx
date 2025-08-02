@@ -78,51 +78,84 @@ const projects: Project[] = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24 sm:py-32">
+    <section id="projects" className="py-32 relative">
       <div className="container mx-auto px-4">
-        <h2 className="text-xl md:text-2xl font-bold mb-12 text-center">Projects</h2>
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-primary bg-clip-text text-transparent">
+            Featured Projects
+          </h2>
+          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+            Showcasing innovative solutions in data engineering and AI development
+          </p>
+        </div>
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {projects.map((project, index) => (
-            <div key={index} className="h-full">
-              <Card className="flex flex-col h-full bg-background/80 backdrop-blur-sm shadow-lg hover:shadow-primary/20 transition-shadow duration-300 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-40 object-cover"
-                />
-                <CardHeader>
+            <motion.div 
+              key={index} 
+              className="h-full"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <Card className="group relative flex flex-col h-full glass-card floating-card overflow-hidden border-white/10">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                
+                <CardHeader className="relative">
                   <div className="flex justify-between items-start">
-                    <CardTitle className="text-lg pr-4">{project.title}</CardTitle>
-                    <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors flex-shrink-0">
-                      <Github className="h-5 w-5" />
+                    <CardTitle className="text-xl font-semibold leading-tight pr-4 group-hover:text-primary transition-colors duration-300">
+                      {project.title}
+                    </CardTitle>
+                    <a 
+                      href={project.repoUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="glass-card p-2 rounded-full text-foreground/70 hover:text-primary transition-all duration-300 hover:scale-110 flex-shrink-0"
+                    >
+                      <Github className="h-4 w-4" />
                     </a>
                   </div>
                 </CardHeader>
-                <CardContent className="flex-grow flex flex-col justify-between">
-                  <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground mb-4">
+                
+                <CardContent className="flex-grow flex flex-col justify-between space-y-4">
+                  <ul className="space-y-3 text-sm text-foreground/80">
                     {project.details.map((point, i) => (
-                      <li key={i}>{point}</li>
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                        <span>{point}</span>
+                      </li>
                     ))}
                   </ul>
-                  <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-border/50">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="bg-secondary text-secondary-foreground text-xs font-semibold px-2.5 py-1 rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  
+                  <div className="pt-4 border-t border-white/10">
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="glass-card px-3 py-1 text-xs font-medium text-foreground/80 rounded-full hover:bg-primary/20 transition-colors duration-300"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>
