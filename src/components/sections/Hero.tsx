@@ -25,12 +25,10 @@ export function Hero() {
             Available for new opportunities
           </div>
           
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight mb-8 animate-fade-in-up">
-            <span className="gradient-primary bg-clip-text text-transparent">
-              Kirthik
+          <h1 className="text-center text-6xl md:text-8xl lg:text-9xl font-black tracking-tight mb-8 animate-fade-in-up">
+            <span className="block gradient-primary bg-clip-text text-transparent">
+              Kirthik B
             </span>
-            <br />
-            <span className="text-foreground font-light">B</span>
           </h1>
           
           <div className="space-y-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>

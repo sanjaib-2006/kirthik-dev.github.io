@@ -42,14 +42,7 @@ export function Header() {
     <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-6xl">
       <div className="glass-nav rounded-full px-8 py-4 animate-morphism">
         <div className="flex items-center justify-between">
-          <Link
-            to="hero"
-            smooth={true}
-            duration={500}
-            className="text-2xl font-bold gradient-primary bg-clip-text text-transparent cursor-pointer hover:scale-105 transition-transform duration-300"
-          >
-            Kirthik B
-          </Link>
+          <div className="w-8"></div> {/* Spacer for balance */}
           
           <nav className="hidden md:flex items-center space-x-8">
             <NavLinks />
